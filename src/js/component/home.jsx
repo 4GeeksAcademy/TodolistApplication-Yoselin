@@ -26,8 +26,8 @@ const Home = () => {
     };
 
 	return (
-        <div className="container">
-            <h1 className="text-center">todos</h1>
+        <div className="container w-50 mx-auto">
+            <h1 className="text-center text-warning fw-light h1 display-1">todos</h1>
             <ul className="list-group">
                 <li className="list-group-item d-flex justify-content-between align-items-center">
                     <input

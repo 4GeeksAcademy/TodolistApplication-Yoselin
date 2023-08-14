@@ -10,7 +10,7 @@ const Home = () => {
     const [todos, setTodos] = useState([]);
 	
 
-    const handleInputChange = event => {
+    const handleInput = event => {
         setInputValue(event.target.value);
     };
 
@@ -21,7 +21,7 @@ const Home = () => {
         }
     };
 
-	const handleDeleteItem = indexToDelete => {
+	const handleDelete = indexToDelete => {
         setTodos(prevTodos => prevTodos.filter((_, index) => index !== indexToDelete));
     };
 
@@ -35,14 +35,14 @@ const Home = () => {
                         className="form-control border-0"
                         placeholder="What needs to be done?"
                         value={inputValue}
-                        onChange={handleInputChange}
+                        onChange={handleInput}
                         onKeyPress={handleKeyPress}
                     />
                 </li>
                 {todos.map((todo, index) => (
                     <li className="list-group-item d-flex justify-content-between align-items-center" key={index}>
                         {todo}
-                        <button className="btn btn-outline-danger" onClick={() => handleDeleteItem(index)}>
+                        <button className="btn btn-outline-danger" onClick={() => handleDelete(index)}>
                             <i className="fas fa-times"></i>
                         </button>
                     </li>
